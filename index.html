@@ -325,6 +325,7 @@
         <div class="card-media lightbox-trigger h-56 md:h-64 overflow-hidden bg-charcoal"
              onclick="openImgModal(this)"
              data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Rizal%20Shrine%20Dapitan%20Casa%20Residencia%20(Talisay%2C%20Dapitan%2C%20Zamboanga%20Del%20Norte%3B%2010-16-2023).jpg"
+             data-page="https://commons.wikimedia.org/wiki/File:Rizal_Shrine_Dapitan_Casa_Residencia_(Talisay,_Dapitan,_Zamboanga_Del_Norte;_10-16-2023).jpg"
              data-alt="Rizal Shrine grounds at Talisay, Dapitan"
              data-tag="PROJECT 01 — INFRASTRUCTURE"
              data-title="A Water Line Built by Hand"
@@ -503,7 +504,7 @@
       <span id="modalTag" class="eyebrow text-[0.68rem] text-brass"></span>
       <h3 id="modalTitle" class="font-display text-2xl mt-1 mb-3 text-charcoal"></h3>
       <p id="modalDesc" class="text-[0.95rem] text-ink/90 mb-3"></p>
-      <p class="eyebrow text-[0.62rem] text-ink/50 uppercase">Source: Wikimedia Commons</p>
+      <p class="eyebrow text-[0.62rem] text-ink/50 uppercase">Source: <a id="modalSourceLink" href="#" target="_blank" rel="noopener" class="underline decoration-ink/30 hover:decoration-ink text-ink/70 hover:text-ink normal-case tracking-normal">Wikimedia Commons</a></p>
     </div>
   </div>
 </div>
@@ -521,6 +522,7 @@
     document.getElementById('modalTag').textContent = el.dataset.tag || '';
     document.getElementById('modalTitle').textContent = el.dataset.title || '';
     document.getElementById('modalDesc').textContent = el.dataset.desc || '';
+    document.getElementById('modalSourceLink').href = el.dataset.page || el.dataset.full;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
