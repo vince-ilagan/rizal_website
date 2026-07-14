@@ -6,305 +6,348 @@
 <title>Talisay, 1892–1896 — Rizal's Dapitan and the Philippines It Still Points To</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          parchment: '#f1e7cd',
+          parchment2: '#e4d5ab',
+          parchment3: '#d8c393',
+          ink: '#2a2117',
+          charcoal: '#19140f',
+          crimson: { DEFAULT: '#7a2e2e', deep: '#4f1c1c' },
+          forest: { DEFAULT: '#3a5a40', deep: '#1f3226' },
+          brass: { DEFAULT: '#a9814e', light: '#c9a06a' },
+        },
+        fontFamily: {
+          display: ['"Playfair Display"', 'serif'],
+          body: ['"Lora"', 'serif'],
+          script: ['"Cormorant Garamond"', 'serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
 <style>
-  :root{
-    --parchment: #ece3cd;
-    --parchment-dim: #ddd0ab;
-    --charcoal: #1e1a16;
-    --ink: #2b241d;
-    --crimson: #7c2b2b;
-    --crimson-deep: #5c1f1f;
-    --brass: #96814f;
-    --forest: #375440;
-    --forest-deep: #24382b;
-    --line: rgba(30,26,22,0.16);
-  }
-  *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
-    margin:0;
-    background: radial-gradient(ellipse at top left, rgba(55,84,64,0.08), transparent 45%), var(--parchment);
-    color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;
+    background-color:#f1e7cd;
+    background-image:
+      radial-gradient(ellipse at 12% -10%, rgba(58,90,64,0.10), transparent 42%),
+      radial-gradient(ellipse at 100% 0%, rgba(122,46,46,0.07), transparent 40%);
   }
-  ::selection{ background:var(--forest); color:var(--parchment); }
-  h1,h2,h3,.display{ font-family:'Playfair Display',serif; color:var(--charcoal); margin:0; letter-spacing:-0.01em; }
-  a{ color:var(--crimson-deep); }
-  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
-  .eyebrow{ font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.16em; font-size:0.72rem; color:var(--forest); }
+  ::selection{ background:#3a5a40; color:#f1e7cd; }
 
-  header.site{ position:sticky; top:0; z-index:50; background:rgba(236,227,205,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
-  .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:1180px; margin:0 auto; }
-  .nav .mark{ font-family:'Playfair Display',serif; font-weight:700; font-size:1.05rem; }
-  .nav .mark em{ font-style:italic; color:var(--forest); }
-  .nav ul{ list-style:none; display:flex; gap:26px; margin:0; padding:0; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; }
-  .nav a{ text-decoration:none; color:var(--ink); opacity:0.75; }
-  .nav a:hover{ opacity:1; color:var(--forest); }
-
-  .hero{ position:relative; padding:120px 32px 100px; text-align:center; overflow:hidden; border-bottom:1px solid var(--line); }
-  .hero::before{
-    content:""; position:absolute; inset:0;
-    background-image: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 120px), repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 120px);
-    opacity:0.5; mask-image: radial-gradient(ellipse at center, black, transparent 75%);
-  }
-  .hero-inner{ position:relative; max-width:760px; margin:0 auto; }
-  .hero .eyebrow{ display:block; margin-bottom:22px; }
-  .hero h1{ font-size:clamp(2.3rem,5vw,3.9rem); line-height:1.08; font-weight:700; }
-  .hero h1 .sub{ display:block; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; font-size:0.42em; color:var(--crimson-deep); margin-top:14px; letter-spacing:0; }
-  .hero p.lede{ max-width:580px; margin:28px auto 0; font-family:'Cormorant Garamond',serif; font-size:1.26rem; opacity:0.85; }
-  .accession-strip{ margin-top:42px; display:flex; justify-content:center; flex-wrap:wrap; gap:0; font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.05em; opacity:0.6; }
-  .accession-strip span{ padding:0 14px; border-right:1px solid var(--line); }
-  .accession-strip span:last-child{ border-right:none; }
-
-  section{ padding:88px 0; }
-  .section-head{ max-width:720px; margin:0 0 56px; }
-  .section-head h2{ font-size:clamp(1.65rem,3vw,2.25rem); margin-top:8px; }
-  .section-head p{ font-family:'Cormorant Garamond',serif; font-size:1.1rem; opacity:0.85; margin-top:14px; }
-
-  .essay{ border-top:1px solid var(--line); }
-  .essay .grid{ display:grid; grid-template-columns:1fr 1.6fr; gap:56px; align-items:start; }
-  .essay blockquote{ margin:0; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.4rem; line-height:1.4; color:var(--forest-deep); border-left:2px solid var(--forest); padding-left:22px; }
-  .essay blockquote cite{ display:block; font-style:normal; font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.05em; margin-top:14px; opacity:0.7; }
-  .essay .prose p{ margin:0 0 18px; font-size:1.01rem; }
-  .essay figure{ margin:28px 0 0; }
-  .essay img{ width:100%; border-radius:3px; display:block; }
-  .essay figcaption{ font-family:'IBM Plex Mono',monospace; font-size:0.66rem; opacity:0.6; margin-top:8px; }
-
-  /* TIMELINE STRIP */
-  .timeline{ background:var(--forest-deep); color:var(--parchment); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .timeline .wrap{ padding:52px 32px; }
-  .tl-row{ display:flex; overflow-x:auto; gap:0; padding-bottom:10px; }
-  .tl-item{ min-width:200px; flex:1; padding:0 22px; border-left:1px solid rgba(236,227,205,0.2); position:relative; }
-  .tl-item:first-child{ border-left:none; }
-  .tl-date{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:#c9a06a; letter-spacing:0.05em; }
-  .tl-text{ font-family:'Cormorant Garamond',serif; font-size:1.02rem; margin-top:8px; color:#ece3cd; opacity:0.92; }
-
-  /* CORRELATION CARDS */
-  .gallery{ border-top:1px solid var(--line); }
-  .cards{ display:flex; flex-direction:column; gap:34px; }
-  .card{
-    position:relative; background:#f5f0e2; border:1px solid var(--line); border-radius:4px; overflow:hidden;
-    transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .4s ease;
-  }
-  .card:hover{ transform:translateY(-4px); box-shadow:0 26px 46px -22px rgba(30,26,22,0.35); border-color:rgba(55,84,64,0.35); }
-  .card-top{ display:flex; align-items:center; justify-content:space-between; padding:20px 26px; border-bottom:1px solid var(--line); background:#efe6cf; }
-  .card-top .obj{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.08em; color:var(--brass); }
-  .card-top h3{ font-size:1.5rem; margin-top:4px; }
-  .card-media{ height:230px; overflow:hidden; background:#171310; }
-  .card-media img{ width:100%; height:100%; object-fit:cover; filter:grayscale(30%) sepia(6%) contrast(1.02); transition:transform .8s cubic-bezier(.2,.8,.2,1), filter .6s ease; }
-  .card:hover .card-media img{ transform:scale(1.05); filter:grayscale(0%) sepia(0%); }
-  .split{ display:grid; grid-template-columns:1fr 1fr; }
-  .split .then, .split .now{ padding:24px 26px 28px; }
-  .split .then{ border-right:1px dashed var(--line); }
-  .split .now{ background:rgba(55,84,64,0.06); }
-  .col-label{ font-family:'IBM Plex Mono',monospace; font-size:0.64rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
-  .col-label.then{ color:var(--crimson); }
-  .col-label.now{ color:var(--forest); }
-  .col-label .yr{ font-weight:600; }
-  .split p{ font-size:0.94rem; margin:0; }
-  .split .now p{ font-family:'Cormorant Garamond', serif; font-size:1.05rem; font-style:italic; color:var(--forest-deep); }
-  .bridge{ display:flex; align-items:center; justify-content:center; padding:6px 0 18px; }
-  .bridge .arrow{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--brass); letter-spacing:0.3em; }
-
-  @media (max-width:820px){
-    .essay .grid{ grid-template-columns:1fr; }
-    .split{ grid-template-columns:1fr; }
-    .split .then{ border-right:none; border-bottom:1px dashed var(--line); }
+  /* paper grain overlay */
+  .grain{
+    position:fixed; inset:0; z-index:60; pointer-events:none; opacity:0.05; mix-blend-mode:multiply;
   }
 
-  .reflect .wrap{ max-width:820px; }
-  .reflect p{ font-size:1.02rem; margin:0 0 18px; }
-  .reflect .pull{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:var(--forest-deep); margin:30px 0; line-height:1.45; border-left:2px solid var(--forest); padding-left:22px; }
+  .eyebrow{ font-family:'IBM Plex Mono',monospace; letter-spacing:0.18em; }
 
-  .biblio{ border-top:1px solid var(--line); background:var(--parchment-dim); }
-  .biblio-list{ margin-top:36px; display:grid; gap:18px; }
-  .biblio-list .entry{ display:grid; grid-template-columns:34px 1fr; gap:14px; font-size:0.9rem; padding-bottom:18px; border-bottom:1px dashed var(--line); }
-  .biblio-list .num{ font-family:'IBM Plex Mono',monospace; color:var(--forest); font-size:0.85rem; }
-  .biblio-list .entry:last-child{ border-bottom:none; }
-  .biblio-list a.src-link{ color:var(--crimson-deep); text-decoration:underline; text-decoration-color:rgba(124,43,43,0.35); text-underline-offset:2px; }
-  .biblio-list a.src-link:hover{ text-decoration-color:var(--crimson-deep); }
-  .src-tag{ font-family:'IBM Plex Mono',monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.06em; padding:1px 6px; border-radius:2px; margin-left:6px; position:relative; top:-1px; background:rgba(55,84,64,0.14); color:var(--forest-deep); }
-
-  footer{ padding:44px 32px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.05em; opacity:0.55; border-top:1px solid var(--line); }
-
-  /* CITATIONS */
-  sup.cite{ font-family:'IBM Plex Mono',monospace; font-size:0.62rem; font-weight:600; }
-  sup.cite a{ text-decoration:none; color:var(--forest); background:rgba(55,84,64,0.12); border-radius:3px; padding:1px 4px; }
-  sup.cite a:hover{ background:var(--forest); color:var(--parchment); }
-  .biblio-list .entry{ scroll-margin-top:90px; transition:background .6s ease; }
-  .biblio-list .entry.flash{ background:rgba(55,84,64,0.14); }
-
-  /* CURATORS' NOTE */
-  .curators{ border-top:1px solid var(--line); background:var(--parchment-dim); }
-  .curators .wrap{ max-width:820px; padding-top:64px; padding-bottom:64px; }
-  .curators .box{ background:#f5f0e2; border:1px solid var(--line); border-radius:4px; padding:32px 36px; }
-  .curators h3{ font-size:1.15rem; margin-bottom:14px; }
-  .curators p{ font-size:0.94rem; margin:0 0 14px; }
-  .curators ul{ margin:0; padding-left:20px; font-size:0.94rem; }
-  .curators li{ margin-bottom:8px; }
-  .curators .byline{ margin-top:22px; padding-top:18px; border-top:1px dashed var(--line); font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; opacity:0.75; }
-
-  /* HERO PORTRAIT */
-  .hero-portrait{ width:112px; height:112px; border-radius:50%; object-fit:cover; margin:0 auto 26px; display:block; border:2px solid var(--brass); filter:sepia(15%) contrast(1.02); box-shadow:0 14px 30px -14px rgba(30,26,22,0.5); }
-
-  /* SCROLL REVEAL */
-  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  /* reveal-on-scroll */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
   .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-l{ opacity:0; transform:translateX(-24px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal-l.in{ opacity:1; transform:translateX(0); }
+  .reveal-r{ opacity:0; transform:translateX(24px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal-r.in{ opacity:1; transform:translateX(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-l, .reveal-r{ opacity:1 !important; transform:none !important; transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* hero */
+  .hero-field::before{
+    content:""; position:absolute; inset:0;
+    background-image: repeating-linear-gradient(90deg, rgba(42,33,23,0.08) 0 1px, transparent 1px 130px), repeating-linear-gradient(0deg, rgba(42,33,23,0.08) 0 1px, transparent 1px 130px);
+    mask-image: radial-gradient(ellipse at center, black, transparent 72%);
+  }
+  .compass{ animation: spin 90s linear infinite; }
+  @media (prefers-reduced-motion: reduce){ .compass{ animation:none; } }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  .hero-portrait{ filter:sepia(18%) contrast(1.05) saturate(0.9); }
+
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(7px); } }
+  .bob{ animation:bob 2.6s ease-in-out infinite; }
+
+  /* card media */
+  .card-media img{ transition:transform 1s cubic-bezier(.2,.8,.2,1), filter .7s ease; }
+  .card:hover .card-media img{ transform:scale(1.06); filter:grayscale(0%) sepia(0%); }
+  .card{ transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease, border-color .5s ease; }
+  .card:hover{ transform:translateY(-6px); box-shadow:0 30px 55px -24px rgba(25,20,15,0.45); }
+
+  /* timeline */
+  .tl-track{ position:relative; }
+  .tl-track::before{
+    content:""; position:absolute; left:0; right:0; top:11px; height:1px;
+    background:repeating-linear-gradient(90deg, rgba(201,160,106,0.55) 0 8px, transparent 8px 14px);
+  }
+  .tl-dot{ box-shadow:0 0 0 4px rgba(58,90,64,0.55); }
+  .tl-item{ transition:transform .4s ease; }
+  .tl-item:hover{ transform:translateY(-4px); }
+
+  /* citation */
+  sup.cite a{ transition:background .25s ease, color .25s ease; }
+  .biblio-entry{ scroll-margin-top:96px; transition:background .8s ease, border-color .8s ease; }
+  .biblio-entry.flash{ background:rgba(58,90,64,0.14); border-color:rgba(58,90,64,0.4); }
+
+  /* nav underline */
+  .nav-link{ position:relative; }
+  .nav-link::after{
+    content:""; position:absolute; left:0; right:100%; bottom:-4px; height:1px; background:#3a5a40; transition:right .3s ease;
+  }
+  .nav-link:hover::after{ right:0; }
+
+  /* wax seal */
+  .seal{ filter:drop-shadow(0 8px 14px rgba(122,46,46,0.35)); }
+  .seal-badge{ transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  .curators-box:hover .seal-badge{ transform:rotate(-8deg) scale(1.05); }
+
+  .drop-cap::first-letter{
+    font-family:'Playfair Display', serif; font-weight:700; font-size:3.4em; float:left; line-height:0.8;
+    padding:0.06em 0.09em 0 0; color:#4f1c1c;
+  }
+
+  .split-then{ border-right:1px dashed rgba(42,33,23,0.18); }
+  @media (max-width:767px){ .split-then{ border-right:none; border-bottom:1px dashed rgba(42,33,23,0.18); } }
+
+  #mobileMenu{ max-height:0; overflow:hidden; transition:max-height .4s ease; }
+  #mobileMenu.open{ max-height:340px; }
 </style>
 </head>
-<body>
+<body class="text-ink font-body leading-relaxed antialiased">
 
-<header class="site">
-  <div class="nav">
-    <div class="mark">Talisay, <em>1892–1896</em></div>
-    <ul>
-      <li><a href="#essay">The Exile</a></li>
-      <li><a href="#timeline">Timeline</a></li>
-      <li><a href="#correlations">Then &amp; Now</a></li>
-      <li><a href="#reflect">Reflection</a></li>
-      <li><a href="#curators">Curators' Note</a></li>
-      <li><a href="#biblio">References</a></li>
-    </ul>
+<!-- paper grain -->
+<svg class="grain" xmlns="http://www.w3.org/2000/svg">
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter>
+  <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 bg-parchment/92 backdrop-blur border-b border-ink/15">
+  <div class="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
+    <a href="#top" class="font-display font-bold text-base md:text-lg tracking-tight">Talisay, <em class="italic text-forest not-italic font-display">1892–1896</em></a>
+    <nav class="hidden md:flex items-center gap-7 eyebrow text-[0.68rem] uppercase text-ink/75">
+      <a href="#essay" class="nav-link hover:text-forest">The Exile</a>
+      <a href="#timeline" class="nav-link hover:text-forest">Timeline</a>
+      <a href="#correlations" class="nav-link hover:text-forest">Then &amp; Now</a>
+      <a href="#reflect" class="nav-link hover:text-forest">Reflection</a>
+      <a href="#curators" class="nav-link hover:text-forest">Curators' Note</a>
+      <a href="#biblio" class="nav-link hover:text-forest">References</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5" aria-label="Toggle menu">
+      <span class="block w-6 h-px bg-ink"></span>
+      <span class="block w-6 h-px bg-ink"></span>
+      <span class="block w-6 h-px bg-ink"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden">
+    <nav class="flex flex-col gap-4 px-6 pb-6 eyebrow text-xs uppercase text-ink/75">
+      <a href="#essay">The Exile</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#correlations">Then &amp; Now</a>
+      <a href="#reflect">Reflection</a>
+      <a href="#curators">Curators' Note</a>
+      <a href="#biblio">References</a>
+    </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-inner">
-    <img class="hero-portrait" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg" alt="Portrait of José Rizal, circa the 1890s" loading="lazy">
-    <span class="eyebrow">A Digital Exhibition — Rizal Studies, 2026</span>
-    <h1>The Republic of Talisay<span class="sub">Rizal's Exile in Dapitan, and the Philippines It Still Points To</span></h1>
-    <p class="lede">Banished to a coastal town he had never seen, Rizal spent four years building the small, practical machinery of a functioning society — a water line, a school, a clinic, a cooperative. Three decades into a very different century, the country he imagined is still trying to finish the same list.</p>
-    <div class="accession-strip">
-      <span>JULY 17, 1892 – JULY 31, 1896</span>
-      <span>DAPITAN, ZAMBOANGA DEL NORTE</span>
-      <span>NOW: JOSÉ RIZAL MEMORIAL PROTECTED LANDSCAPE</span>
+<!-- ============ HERO ============ -->
+<section id="top" class="hero-field relative overflow-hidden border-b border-ink/15 py-24 md:py-32 px-6 text-center">
+  <svg class="compass absolute -top-10 -right-10 w-56 h-56 opacity-[0.07] hidden md:block" viewBox="0 0 100 100" fill="none" stroke="#2a2117" stroke-width="0.5">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="36"/>
+    <path d="M50 4 L50 96 M4 50 L96 50 M15 15 L85 85 M85 15 L15 85"/>
+    <path d="M50 10 L54 48 L50 50 L46 48 Z" fill="#2a2117" stroke="none"/>
+  </svg>
+
+  <div class="relative max-w-2xl mx-auto reveal in">
+    <div class="seal mx-auto mb-7 w-[104px] h-[104px] rounded-full border-2 border-brass overflow-hidden shadow-xl">
+      <img class="hero-portrait w-full h-full object-cover" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg" alt="Portrait of José Rizal, circa the 1890s" loading="lazy">
+    </div>
+    <span class="eyebrow block uppercase text-[0.7rem] text-forest mb-5">A Digital Exhibition — Rizal Studies, 2026</span>
+    <h1 class="font-display font-bold text-[clamp(2.2rem,5.4vw,3.9rem)] leading-[1.08] text-charcoal">
+      The Republic of Talisay
+      <span class="block font-script italic font-medium text-[0.42em] text-crimson-deep mt-4 tracking-normal">Rizal's Exile in Dapitan, and the Philippines It Still Points To</span>
+    </h1>
+    <p class="font-script text-[1.3rem] text-ink/85 max-w-lg mx-auto mt-7">Banished to a coastal town he had never seen, Rizal spent four years building the small, practical machinery of a functioning society — a water line, a school, a clinic, a cooperative. Three decades into a very different century, the country he imagined is still trying to finish the same list.</p>
+    <div class="mt-11 flex flex-wrap justify-center eyebrow text-[0.64rem] text-ink/60 divide-x divide-ink/15">
+      <span class="px-3.5">JULY 17, 1892 – JULY 31, 1896</span>
+      <span class="px-3.5">DAPITAN, ZAMBOANGA DEL NORTE</span>
+      <span class="px-3.5">NOW: JOSÉ RIZAL MEMORIAL PROTECTED LANDSCAPE</span>
+    </div>
+    <div class="bob mt-14 text-ink/40">
+      <svg class="mx-auto w-4 h-6" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 1v20M2 15l6 6 6-6"/></svg>
     </div>
   </div>
 </section>
 
-<section class="essay" id="essay">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">The Exile</span>
-      <h2>A Sentence Rizal Turned Into a Job</h2>
+<!-- ============ ESSAY ============ -->
+<section id="essay" class="border-b border-ink/15 py-20 md:py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-xl mb-14 reveal">
+      <span class="eyebrow uppercase text-[0.72rem] text-forest">The Exile</span>
+      <h2 class="font-display font-semibold text-[clamp(1.6rem,3vw,2.2rem)] mt-2 text-charcoal">A Sentence Rizal Turned Into a Job</h2>
     </div>
-    <div class="grid">
-      <blockquote>
+    <div class="grid md:grid-cols-[1fr_1.6fr] gap-12 md:gap-16 items-start">
+      <blockquote class="reveal-l font-script italic text-[1.35rem] leading-snug text-forest-deep border-l-2 border-forest pl-6">
         I do not know the cause of my confinement... I only console myself with the thought that if I suffer for my country, it is not to be regretted.
-        <cite>— José Rizal, letter to Fr. Pablo Pastells, Dapitan, 1892</cite>
+        <cite class="not-italic block eyebrow text-[0.65rem] mt-4 text-ink/60">— José Rizal, letter to Fr. Pablo Pastells, Dapitan, 1892</cite>
       </blockquote>
-      <div class="prose">
-        <p>In July 1892, Governor-General Eulogio Despujol ordered Rizal exiled to Mindanao after linking him to the newly founded La Liga Filipina and to anti-colonial pamphlets found aboard the ship that brought him home from Hong Kong.<sup class="cite"><a href="#bib1" data-jump>1</a></sup> Rizal landed on the beach at Santa Cruz, Dapitan, at seven in the evening on July 17, 1892, and was walked by lamplight to the Casa Real, the residence of the local Spanish commandant, Ricardo Carnicero, where he would first be kept under watch.<sup class="cite"><a href="#bib10" data-jump>10</a></sup></p>
-        <p>He had no trial, no fixed sentence, and — for a man who had just published two novels that unsettled an empire — remarkably little to do. What he did instead was spend four years, ten months, and two weeks building the infrastructure of a town: a water system, a school, a working clinic, a public plaza, a plan for a farmers' cooperative.<sup class="cite"><a href="#bib10" data-jump>10</a></sup> None of it was punishment. All of it was Rizal's own initiative, largely unpaid, offered to a town of a few thousand people he had no obligation to improve.</p>
-        <p>This exhibit treats Dapitan not as a footnote between the Noli and the firing squad, but as Rizal's only real chance to govern — in miniature, without office or authority, using nothing but medicine, engineering, and teaching. The four projects below are read against a Philippines still negotiating the same four problems: water, health, education, and who gets to profit from a farmer's crop.</p>
+      <div class="reveal-r space-y-4 text-[1.02rem]">
+        <p class="drop-cap">In July 1892, Governor-General Eulogio Despujol ordered Rizal exiled to Mindanao after linking him to the newly founded La Liga Filipina and to anti-colonial pamphlets found aboard the ship that brought him home from Hong Kong.<sup class="cite"><a href="#bib1" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">1</a></sup></p>
+        <p>Rizal landed on the beach at Santa Cruz, Dapitan, at seven in the evening on July 17, 1892, and was walked by lamplight to the Casa Real, the residence of the local Spanish commandant, Ricardo Carnicero, where he would first be kept under watch.<sup class="cite"><a href="#bib10" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">10</a></sup></p>
+        <p>He had no trial, no fixed sentence, and — for a man who had just published two novels that unsettled an empire — remarkably little to do. What he did instead was spend four years and two weeks building the infrastructure of a town: a water system, a school, a working clinic, a public plaza, a plan for a farmers' cooperative.<sup class="cite"><a href="#bib10" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">10</a></sup> None of it was punishment. All of it was Rizal's own initiative, largely unpaid, offered to a town of a few thousand people he had no obligation to improve.</p>
+        <p>This exhibit treats Dapitan not as a footnote between the <em>Noli</em> and the firing squad, but as Rizal's only real chance to govern — in miniature, without office or authority, using nothing but medicine, engineering, and teaching. The four projects below are read against a Philippines still negotiating the same four problems: water, health, education, and who gets to profit from a farmer's crop.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="timeline" id="timeline">
-  <div class="wrap">
-    <span class="eyebrow" style="color:#c9a06a;">Four Years, Briefly</span>
-    <h2 style="color:var(--parchment); margin-top:8px; font-size:1.9rem;">Dapitan in Ten Dates</h2>
-    <div class="tl-row" style="margin-top:36px;">
-      <div class="tl-item"><div class="tl-date">JUL 17, 1892</div><div class="tl-text">Rizal lands at Santa Cruz beach, Dapitan, to begin his exile under Gov. Ricardo Carnicero.</div></div>
-      <div class="tl-item"><div class="tl-date">MAR 1893</div><div class="tl-text">Moves from the Casa Real to Talisay, buying land along the shore to farm and build on.</div></div>
-      <div class="tl-item"><div class="tl-date">1893–94</div><div class="tl-text">Designs and builds a gravity-fed water system in bamboo pipe for the town, plants the plaza's acacia trees.</div></div>
-      <div class="tl-item"><div class="tl-date">AUG–SEP 1892</div><div class="tl-text">With Fr. Francisco Sanchez, builds a large relief map of Mindanao in the town plaza with his students.</div></div>
-      <div class="tl-item"><div class="tl-date">1893</div><div class="tl-text">Opens a school for local boys — geography, languages, farming, carpentry, and sport, tuition often paid in labor.</div></div>
-      <div class="tl-item"><div class="tl-date">1895</div><div class="tl-text">Meets Josephine Bracken, who arrives with her blind stepfather George Taufer, seeking treatment.</div></div>
-      <div class="tl-item"><div class="tl-date">1892–96</div><div class="tl-text">Runs a free and paid medical practice, specializing in ophthalmology; drafts plans for a farmers' cooperative.</div></div>
-      <div class="tl-item"><div class="tl-date">JUL 31, 1896</div><div class="tl-text">Departs Dapitan for Manila, granted leave to serve as an army doctor in Cuba — a permission that would not save him.</div></div>
+<!-- ============ TIMELINE ============ -->
+<section id="timeline" class="bg-forest-deep text-parchment border-b border-ink/15">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <span class="eyebrow uppercase text-[0.72rem] text-brass-light">Four Years, Briefly</span>
+    <h2 class="font-display font-semibold text-[1.85rem] mt-2 reveal">Dapitan in Ten Dates</h2>
+    <div class="tl-track flex overflow-x-auto gap-0 mt-12 pb-4">
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 first:pl-0 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">JUL 17, 1892</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Rizal lands at Santa Cruz beach, Dapitan, to begin his exile under Gov. Ricardo Carnicero.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">MAR 1893</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Moves from the Casa Real to Talisay, buying land along the shore to farm and build on.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">1893–94</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Designs and builds a gravity-fed water system in bamboo pipe for the town, plants the plaza's acacia trees.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">AUG–SEP 1892</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">With Fr. Francisco Sanchez, builds a large relief map of Mindanao in the town plaza with his students.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">1893</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Opens a school for local boys — geography, languages, farming, carpentry, and sport, tuition often paid in labor.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">1895</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Meets Josephine Bracken, who arrives with her blind stepfather George Taufer, seeking treatment.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">1892–96</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Runs a free and paid medical practice, specializing in ophthalmology; drafts plans for a farmers' cooperative.</p>
+      </div>
+      <div class="tl-item reveal min-w-[200px] flex-1 px-5 relative">
+        <span class="tl-dot block w-2 h-2 rounded-full bg-brass-light mb-4"></span>
+        <div class="eyebrow text-[0.68rem] text-brass-light">JUL 31, 1896</div>
+        <p class="font-script text-[1.02rem] mt-2 text-parchment/92">Departs Dapitan for Manila, granted leave to serve as an army doctor in Cuba — a permission that would not save him.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="gallery" id="correlations">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Then &amp; Now</span>
-      <h2>What Dapitan Was Solving For — And Who Is Still Solving It</h2>
-      <p>Each card pairs a documented Dapitan project with a live issue in the Philippines today. The correlations are interpretive, not causal — Rizal did not invent rural healthcare policy. But the shape of the problem has not moved nearly as much as the century between them suggests.</p>
+<!-- ============ THEN & NOW ============ -->
+<section id="correlations" class="border-b border-ink/15 py-20 md:py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl mb-14 reveal">
+      <span class="eyebrow uppercase text-[0.72rem] text-forest">Then &amp; Now</span>
+      <h2 class="font-display font-semibold text-[clamp(1.6rem,3vw,2.2rem)] mt-2 text-charcoal">What Dapitan Was Solving For — And Who Is Still Solving It</h2>
+      <p class="font-script text-[1.08rem] text-ink/85 mt-4">Each card pairs a documented Dapitan project with a live issue in the Philippines today. The correlations are interpretive, not causal — Rizal did not invent rural healthcare policy. But the shape of the problem has not moved nearly as much as the century between them suggests.</p>
     </div>
 
-    <div class="cards">
+    <div class="flex flex-col gap-9">
 
       <!-- CARD 1: WATER -->
-      <article class="card">
-        <div class="card-top">
-          <div><span class="obj">PROJECT 01 — INFRASTRUCTURE</span><h3>A Water Line Built by Hand</h3></div>
+      <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
+        <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
+          <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 01 — INFRASTRUCTURE</span><h3 class="font-display text-2xl mt-1">A Water Line Built by Hand</h3></div>
         </div>
-        <div class="card-media">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rizal%20Shrine%20Dapitan%20Casa%20Residencia%20(Talisay%2C%20Dapitan%2C%20Zamboanga%20Del%20Norte%3B%2010-16-2023).jpg" alt="Rizal Shrine grounds at Talisay, Dapitan" loading="lazy">
+        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+          <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rizal%20Shrine%20Dapitan%20Casa%20Residencia%20(Talisay%2C%20Dapitan%2C%20Zamboanga%20Del%20Norte%3B%2010-16-2023).jpg" alt="Rizal Shrine grounds at Talisay, Dapitan" loading="lazy">
         </div>
-        <div class="split">
-          <div class="then">
-            <div class="col-label then"><span class="yr">1893–94</span> · DAPITAN</div>
-            <p>With no formal engineering degree — only the title of <em>perito agrimensor</em> (expert surveyor) from the Ateneo and self-taught reading in engineering texts — Rizal surveyed the Linao spring and designed a gravity-fed aqueduct of hollowed bamboo pipe, laid across gullies on rock and brick piers, that watered the town without dynamite or machinery.<sup class="cite"><a href="#bib12" data-jump>12</a></sup> He also funded and installed the town plaza's coconut-oil street lighting using a ₱500 fee paid by an English patient.<sup class="cite"><a href="#bib3" data-jump>3</a></sup> The Department of Science and Technology cites this system as an early example of Filipino-led public-works innovation.<sup class="cite"><a href="#bib11" data-jump>11</a></sup></p>
+        <div class="grid md:grid-cols-2">
+          <div class="split-then p-6 md:p-7">
+            <div class="eyebrow text-[0.64rem] uppercase text-crimson mb-2.5 flex items-center gap-2"><span class="font-semibold">1893–94</span> · DAPITAN</div>
+            <p class="text-[0.95rem]">With no formal engineering degree — only the title of <em>perito agrimensor</em> (expert surveyor) from the Ateneo and self-taught reading in engineering texts — Rizal surveyed the Linao spring and designed a gravity-fed aqueduct of hollowed bamboo pipe, laid across gullies on rock and brick piers, that watered the town without dynamite or machinery.<sup class="cite"><a href="#bib12" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">12</a></sup> He also funded and installed the town plaza's coconut-oil street lighting using a ₱500 fee paid by an English patient.<sup class="cite"><a href="#bib3" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">3</a></sup> The Department of Science and Technology cites this system as an early example of Filipino-led public-works innovation.<sup class="cite"><a href="#bib11" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">11</a></sup></p>
           </div>
-          <div class="now">
-            <div class="col-label now"><span class="yr">TODAY</span> · THE PHILIPPINES</div>
-            <p>Millions of households outside Metro Manila still rely on communal springs, shallow wells, or barangay-funded pipe systems rather than a piped municipal utility — water infrastructure in far provinces remains a local-government and community-labor project, "bayanihan" engineering, much like Rizal's, more often than a national one. <em>(Interpretive comparison — see Curators' Note.)</em></p>
+          <div class="p-6 md:p-7 bg-forest/[0.06]">
+            <div class="eyebrow text-[0.64rem] uppercase text-forest mb-2.5"><span class="font-semibold">TODAY</span> · THE PHILIPPINES</div>
+            <p class="font-script italic text-[1.06rem] text-forest-deep">Millions of households outside Metro Manila still rely on communal springs, shallow wells, or barangay-funded pipe systems rather than a piped municipal utility — water infrastructure in far provinces remains a local-government and community-labor project, "bayanihan" engineering, much like Rizal's, more often than a national one. <span class="not-italic eyebrow text-[0.62rem] text-ink/50">(Interpretive comparison — see Curators' Note.)</span></p>
           </div>
         </div>
       </article>
 
       <!-- CARD 2: HEALTH -->
-      <article class="card">
-        <div class="card-top">
-          <div><span class="obj">PROJECT 02 — MEDICINE</span><h3>A Clinic With No Waiting List Rule</h3></div>
+      <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
+        <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
+          <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 02 — MEDICINE</span><h3 class="font-display text-2xl mt-1">A Clinic With No Waiting List Rule</h3></div>
         </div>
-        <div class="card-media">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20nipa%20hut%20at%20Rizal%20Memorial%20Park%20and%20Shrine%20at%20Dapitan%2C%20Zamboanga%20del%20Norte.jpg" alt="Interior of a nipa hut at the Rizal Shrine, Dapitan" loading="lazy">
+        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+          <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20nipa%20hut%20at%20Rizal%20Memorial%20Park%20and%20Shrine%20at%20Dapitan%2C%20Zamboanga%20del%20Norte.jpg" alt="Interior of a nipa hut at the Rizal Shrine, Dapitan" loading="lazy">
         </div>
-        <div class="split">
-          <div class="then">
-            <div class="col-label then"><span class="yr">1892–96</span> · DAPITAN</div>
-            <p>Rizal ran an active medical and surgical practice from Talisay, drawing patients from across Mindanao and abroad, including a blind Hong Kong–based Englishman, George Taufer, whose stepdaughter Josephine Bracken accompanied him.<sup class="cite"><a href="#bib10" data-jump>10</a></sup> Rizal charged wealthier patients and treated the poor for little or nothing, using the income to fund his other projects.<sup class="cite"><a href="#bib10" data-jump>10</a></sup></p>
+        <div class="grid md:grid-cols-2">
+          <div class="split-then p-6 md:p-7">
+            <div class="eyebrow text-[0.64rem] uppercase text-crimson mb-2.5"><span class="font-semibold">1892–96</span> · DAPITAN</div>
+            <p class="text-[0.95rem]">Rizal ran an active medical and surgical practice from Talisay, drawing patients from across Mindanao and abroad, including a blind Hong Kong–based Englishman, George Taufer, whose stepdaughter Josephine Bracken accompanied him.<sup class="cite"><a href="#bib10" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">10</a></sup> Rizal charged wealthier patients and treated the poor for little or nothing, using the income to fund his other projects.<sup class="cite"><a href="#bib10" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">10</a></sup></p>
           </div>
-          <div class="now">
-            <div class="col-label now"><span class="yr">TODAY</span> · THE PHILIPPINES</div>
-            <p>The Department of Health's "Doctors to the Barrios" program still sends physicians to underserved, often geographically isolated municipalities on a similar premise: that specialist care has to travel to where the patient is, not the reverse, because the patient often cannot afford to travel or wait.<sup class="cite"><a href="#bib6" data-jump>6</a></sup></p>
+          <div class="p-6 md:p-7 bg-forest/[0.06]">
+            <div class="eyebrow text-[0.64rem] uppercase text-forest mb-2.5"><span class="font-semibold">TODAY</span> · THE PHILIPPINES</div>
+            <p class="font-script italic text-[1.06rem] text-forest-deep">The Department of Health's "Doctors to the Barrios" program still sends physicians to underserved, often geographically isolated municipalities on a similar premise: that specialist care has to travel to where the patient is, not the reverse, because the patient often cannot afford to travel or wait.<sup class="cite"><a href="#bib6" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">6</a></sup></p>
           </div>
         </div>
       </article>
 
       <!-- CARD 3: EDUCATION -->
-      <article class="card">
-        <div class="card-top">
-          <div><span class="obj">PROJECT 03 — EDUCATION</span><h3>A School That Taught With Its Hands</h3></div>
+      <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
+        <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
+          <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 03 — EDUCATION</span><h3 class="font-display text-2xl mt-1">A School That Taught With Its Hands</h3></div>
         </div>
-        <div class="card-media">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Relief%20Map%20of%20Mindanao%20by%20Jose%20Rizal%20in%20Dapitan%20City.jpg" alt="Relief Map of Mindanao built by Rizal and his students, Dapitan" loading="lazy">
+        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+          <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Relief%20Map%20of%20Mindanao%20by%20Jose%20Rizal%20in%20Dapitan%20City.jpg" alt="Relief Map of Mindanao built by Rizal and his students, Dapitan" loading="lazy">
         </div>
-        <div class="split">
-          <div class="then">
-            <div class="col-label then"><span class="yr">1893</span> · DAPITAN</div>
-            <p>Rizal's school for local boys — never more than about two dozen students at a time — taught Spanish and English, mathematics and geography alongside farming, carpentry, and physical exercise.<sup class="cite"><a href="#bib10" data-jump>10</a></sup> Tuition was flexible: boys who could not pay worked instead. The relief map of Mindanao he and Fr. Francisco Sanchez built with his students in the plaza, using earth, stone, and grass, doubled as a geography lesson and a public monument, and still stands today, declared a National Historical Landmark.<sup class="cite"><a href="#bib4" data-jump>4</a></sup></p>
+        <div class="grid md:grid-cols-2">
+          <div class="split-then p-6 md:p-7">
+            <div class="eyebrow text-[0.64rem] uppercase text-crimson mb-2.5"><span class="font-semibold">1893</span> · DAPITAN</div>
+            <p class="text-[0.95rem]">Rizal's school for local boys — never more than about two dozen students at a time — taught Spanish and English, mathematics and geography alongside farming, carpentry, and physical exercise.<sup class="cite"><a href="#bib10" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">10</a></sup> Tuition was flexible: boys who could not pay worked instead. The relief map of Mindanao he and Fr. Francisco Sanchez built with his students in the plaza, using earth, stone, and grass, doubled as a geography lesson and a public monument, and still stands today, declared a National Historical Landmark.<sup class="cite"><a href="#bib4" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">4</a></sup></p>
           </div>
-          <div class="now">
-            <div class="col-label now"><span class="yr">TODAY</span> · THE PHILIPPINES</div>
-            <p>The K–12 curriculum's Technical-Vocational-Livelihood track and the Alternative Learning System both formalize what Rizal was doing without a framework for it: treating a trade skill as equal in dignity to a textbook lesson, and treating a student's ability to pay as separate from their right to be taught.<sup class="cite"><a href="#bib7" data-jump>7</a></sup></p>
+          <div class="p-6 md:p-7 bg-forest/[0.06]">
+            <div class="eyebrow text-[0.64rem] uppercase text-forest mb-2.5"><span class="font-semibold">TODAY</span> · THE PHILIPPINES</div>
+            <p class="font-script italic text-[1.06rem] text-forest-deep">The K–12 curriculum's Technical-Vocational-Livelihood track and the Alternative Learning System both formalize what Rizal was doing without a framework for it: treating a trade skill as equal in dignity to a textbook lesson, and treating a student's ability to pay as separate from their right to be taught.<sup class="cite"><a href="#bib7" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">7</a></sup></p>
           </div>
         </div>
       </article>
 
-      <!-- CARD 4: AGRICULTURE / COOPERATIVE ECONOMICS -->
-      <article class="card">
-        <div class="card-top">
-          <div><span class="obj">PROJECT 04 — AGRICULTURE</span><h3>Cutting Out the Middleman</h3></div>
+      <!-- CARD 4: AGRICULTURE -->
+      <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
+        <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
+          <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 04 — AGRICULTURE</span><h3 class="font-display text-2xl mt-1">Cutting Out the Middleman</h3></div>
         </div>
-        <div class="card-media">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20Shrine%2C%20Dapitan%2C%20Zamboanga%20del%20Norte.JPG" alt="Grounds of the Rizal Shrine, formerly Rizal's farmland at Talisay" loading="lazy">
+        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+          <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20Shrine%2C%20Dapitan%2C%20Zamboanga%20del%20Norte.JPG" alt="Grounds of the Rizal Shrine, formerly Rizal's farmland at Talisay" loading="lazy">
         </div>
-        <div class="split">
-          <div class="then">
-            <div class="col-label then"><span class="yr">1893–96</span> · DAPITAN</div>
-            <p>On the roughly sixteen-hectare estate he bought and cleared at Talisay, Rizal experimented with abaca, cacao, coconut, and coffee, imported farm implements from the United States, and drafted plans for a farmers' cooperative that would let Dapitan's abaca growers sell directly rather than through trading middlemen who controlled local prices<sup class="cite"><a href="#bib2" data-jump>2</a></sup> — an idea he never got the years to fully build.</p>
+        <div class="grid md:grid-cols-2">
+          <div class="split-then p-6 md:p-7">
+            <div class="eyebrow text-[0.64rem] uppercase text-crimson mb-2.5"><span class="font-semibold">1893–96</span> · DAPITAN</div>
+            <p class="text-[0.95rem]">On the roughly sixteen-hectare estate he bought and cleared at Talisay, Rizal experimented with abaca, cacao, coconut, and coffee, imported farm implements from the United States, and drafted plans for a farmers' cooperative that would let Dapitan's abaca growers sell directly rather than through trading middlemen who controlled local prices<sup class="cite"><a href="#bib2" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">2</a></sup> — an idea he never got the years to fully build.</p>
           </div>
-          <div class="now">
-            <div class="col-label now"><span class="yr">TODAY</span> · THE PHILIPPINES</div>
-            <p>The Philippines remains among the world's largest abaca producers, and farmer cooperatives — along with agrarian reform and fair-trade initiatives — are still the primary tools smallholders use to negotiate better prices against consolidated traders and exporters, the same structural squeeze Rizal was trying to design around.<sup class="cite"><a href="#bib8" data-jump>8</a></sup></p>
+          <div class="p-6 md:p-7 bg-forest/[0.06]">
+            <div class="eyebrow text-[0.64rem] uppercase text-forest mb-2.5"><span class="font-semibold">TODAY</span> · THE PHILIPPINES</div>
+            <p class="font-script italic text-[1.06rem] text-forest-deep">The Philippines remains among the world's largest abaca producers, and farmer cooperatives — along with agrarian reform and fair-trade initiatives — are still the primary tools smallholders use to negotiate better prices against consolidated traders and exporters, the same structural squeeze Rizal was trying to design around.<sup class="cite"><a href="#bib8" data-jump class="eyebrow text-[0.62rem] font-semibold no-underline text-forest bg-forest/10 rounded px-1 py-0.5 hover:bg-forest hover:text-parchment">8</a></sup></p>
           </div>
         </div>
       </article>
@@ -313,75 +356,88 @@
   </div>
 </section>
 
-<section class="reflect" id="reflect">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Closing Reflection</span>
-      <h2>Exile as a Working Prototype</h2>
-    </div>
-    <p>None of Rizal's Dapitan projects were radical in form. A water pipe, a one-room school, a doctor's clinic, a cooperative that never fully launched — these are the unglamorous, procedural units a functioning state is built from, not the stuff of manifestos. That may be exactly why they are the parts of Rizal's life the country has had the hardest time finishing. It is easier to memorize <em>Mi Último Adiós</em> than to lay a water pipe to every barangay that still needs one.</p>
-    <p class="pull">Rizal in Dapitan was not preparing for martyrdom. He was behaving as though he expected to stay — building things with the patience of someone planning for a future he would, in the end, not get to see.</p>
-    <p>Reading Dapitan against the present is not an argument that nothing has changed; DOH programs, TESDA, agrarian reform law, and rural electrification did not exist in Rizal's lifetime and represent real, if uneven, progress. It is an argument that the categories he chose — water, health, education, fair terms of trade — turned out to be the right ones to choose, and that a exile with no staff, no budget, and no legal authority still managed to make a dent in all four within four years. The correlation is not that the Philippines has failed to move. It is that Rizal, working alone in a small coastal town, correctly diagnosed what moving would require.</p>
+<!-- ============ REFLECTION ============ -->
+<section id="reflect" class="border-b border-ink/15 py-20 md:py-24 px-6">
+  <div class="max-w-3xl mx-auto reveal">
+    <span class="eyebrow uppercase text-[0.72rem] text-forest">Closing Reflection</span>
+    <h2 class="font-display font-semibold text-[clamp(1.6rem,3vw,2.2rem)] mt-2 text-charcoal">Exile as a Working Prototype</h2>
+    <p class="mt-6">None of Rizal's Dapitan projects were radical in form. A water pipe, a one-room school, a doctor's clinic, a cooperative that never fully launched — these are the unglamorous, procedural units a functioning state is built from, not the stuff of manifestos. That may be exactly why they are the parts of Rizal's life the country has had the hardest time finishing. It is easier to memorize <em>Mi Último Adiós</em> than to lay a water pipe to every barangay that still needs one.</p>
+    <p class="font-script italic text-[1.28rem] text-forest-deep border-l-2 border-forest pl-6 my-8 leading-snug">Rizal in Dapitan was not preparing for martyrdom. He was behaving as though he expected to stay — building things with the patience of someone planning for a future he would, in the end, not get to see.</p>
+    <p>Reading Dapitan against the present is not an argument that nothing has changed; DOH programs, TESDA, agrarian reform law, and rural electrification did not exist in Rizal's lifetime and represent real, if uneven, progress. It is an argument that the categories he chose — water, health, education, fair terms of trade — turned out to be the right ones to choose, and that an exile with no staff, no budget, and no legal authority still managed to make a dent in all four within four years. The correlation is not that the Philippines has failed to move. It is that Rizal, working alone in a small coastal town, correctly diagnosed what moving would require.</p>
   </div>
 </section>
 
-<section class="curators" id="curators">
-  <div class="wrap">
-    <div class="section-head" style="margin-bottom:28px;">
-      <span class="eyebrow">Method &amp; Approach</span>
-      <h2>Curators' Note</h2>
+<!-- ============ CURATORS' NOTE ============ -->
+<section id="curators" class="bg-parchment2/60 border-b border-ink/15 py-16 md:py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-7 reveal">
+      <span class="eyebrow uppercase text-[0.72rem] text-forest">Method &amp; Approach</span>
+      <h2 class="font-display font-semibold text-[clamp(1.5rem,2.6vw,1.9rem)] mt-2 text-charcoal">Curators' Note</h2>
     </div>
-    <div class="box reveal">
-      <h3>Why "Then &amp; Now," and not just a timeline</h3>
-      <p>Most student work on Rizal's Dapitan exile treats it as biography — a list of things he built between two novels and a firing squad. We chose a different frame: read each Dapitan project as a policy problem, and ask what institution or program in the present-day Philippines is still answering the same question. That interpretive move — biography read as an unfinished checklist of public goods — is the original contribution of this exhibit, not the underlying facts, which are drawn from standard biographical and archival sources listed below.</p>
-      <h3>How we approached accuracy</h3>
-      <ul>
+    <div class="curators-box reveal relative bg-[#f5f0e2] border border-ink/15 rounded p-8 md:p-9">
+      <svg class="seal-badge absolute -top-5 -right-5 w-16 h-16" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="30" fill="#7a2e2e"/>
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#4f1c1c" stroke-width="1.5"/>
+        <text x="32" y="29" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#f1e7cd" letter-spacing="0.5">FACT</text>
+        <text x="32" y="40" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#f1e7cd" letter-spacing="0.5">CHECKED</text>
+      </svg>
+      <h3 class="font-display text-lg mb-3">Why "Then &amp; Now," and not just a timeline</h3>
+      <p class="text-[0.95rem] mb-4">Most student work on Rizal's Dapitan exile treats it as biography — a list of things he built between two novels and a firing squad. We chose a different frame: read each Dapitan project as a policy problem, and ask what institution or program in the present-day Philippines is still answering the same question. That interpretive move — biography read as an unfinished checklist of public goods — is the original contribution of this exhibit, not the underlying facts, which are drawn from standard biographical and archival sources listed below.</p>
+      <h3 class="font-display text-lg mb-3">How we approached accuracy</h3>
+      <ul class="list-disc pl-5 space-y-2 text-[0.95rem]">
         <li>Every source in this exhibit is a freely accessible website — government agency pages (NHCP, DOH, DepEd, PhilFIDA, the Official Gazette), a peer-reviewed journal PDF, an encyclopedia entry, and course-reading material — so any claim can be checked by following the citation link.</li>
         <li>Every factual claim about Dapitan (dates, figures, named individuals) is cross-checked against at least two independent web sources where possible, and is marked with a numbered citation linking to the Bibliography.</li>
         <li>Every "Today" claim is drawn from a government agency's own program description (DOH, DepEd, DENR/Official Gazette, PhilFIDA) rather than a secondary summary, so the comparison isn't resting on someone else's interpretation of the current policy.</li>
         <li>Where a claim is interpretive rather than factual — such as the framing that Rizal was "diagnosing" categories of governance — we say so directly in the text (see the closing reflection and the note under Project 01) instead of presenting an opinion as established history.</li>
+        <li>One figure was corrected in this revision: the length of the Dapitan exile is stated here as <strong>four years and two weeks</strong> (17 July 1892 – 31 July 1896), matching NHCP and standard biographical sources; an earlier draft had misstated this as "four years, ten months, and two weeks."</li>
       </ul>
-      <h3>Course concepts applied</h3>
-      <p>This output draws on the semester's discussion of Rizal as reformist rather than purely revolutionary figure, the material conditions of Spanish-era Mindanao, and the reform-vs-revolution debate embodied in his correspondence with Fr. Pastells — using the Dapitan period specifically because it is where Rizal's reformist instincts were least constrained and most fully realized in practice.</p>
-      <div class="byline">PREPARED BY: Crisostomo, Gomez &amp; Ilagan · PI 10, SECTION B3 · SUBMITTED JULY 14, 2026</div>
+      <h3 class="font-display text-lg mb-3 mt-5">Course concepts applied</h3>
+      <p class="text-[0.95rem]">This output draws on the semester's discussion of Rizal as reformist rather than purely revolutionary figure, the material conditions of Spanish-era Mindanao, and the reform-vs-revolution debate embodied in his correspondence with Fr. Pastells — using the Dapitan period specifically because it is where Rizal's reformist instincts were least constrained and most fully realized in practice.</p>
+      <div class="mt-6 pt-4 border-t border-dashed border-ink/20 eyebrow text-[0.68rem] text-ink/75">PREPARED BY: Crisostomo, Gomez &amp; Ilagan · PI 10, SECTION B3 · SUBMITTED JULY 14, 2026</div>
     </div>
   </div>
 </section>
 
-<section class="biblio" id="biblio">
-  <div class="wrap">
-    <span class="eyebrow">References</span>
-    <h2>Bibliography</h2>
-    <div class="biblio-list">
-      <div class="entry" id="bib1"><span class="num">01</span><span><em>Britannica</em>. "Jose Rizal: Biography, Education, Works, Full Name, & Facts." <a class="src-link" href="https://www.britannica.com/biography/Jose-Rizal" target="_blank" rel="noopener">britannica.com/biography/Jose-Rizal</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib2"><span class="num">02</span><span>National Historical Commission of the Philippines. "Rizal as a Farmer: The Dapitan Experience." <a class="src-link" href="https://nhcp.gov.ph/rizal-as-a-farmer-the-dapitan-experience/" target="_blank" rel="noopener">nhcp.gov.ph/rizal-as-a-farmer-the-dapitan-experience</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib3"><span class="num">03</span><span>"Water System for Dapitan: Rizal Held the Title of Expert Surveyor." Study notes, Studocu. <a class="src-link" href="https://www.studocu.com/ph/document/university-of-perpetual-help-system-jonelta/medical-technology/water-system-for-dapitan-she/58771910" target="_blank" rel="noopener">studocu.com</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib4"><span class="num">04</span><span>National Historical Commission of the Philippines. "Museo ni José Rizal, Dapitan." <a class="src-link" href="https://nhcp.gov.ph/meseums/mjrd/" target="_blank" rel="noopener">nhcp.gov.ph/meseums/mjrd</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib5"><span class="num">05</span><span>Republic of the Philippines. "Proclamation No. 279, s. 2000 — Declaring Rizal National Park as the José Rizal Memorial Protected Landscape." <a class="src-link" href="https://www.officialgazette.gov.ph/2000/04/23/proclamation-no-279-s-2000/" target="_blank" rel="noopener">officialgazette.gov.ph</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib6"><span class="num">06</span><span>Department of Health, Philippines. "Doctors to the Barrios (DTTB)." <a class="src-link" href="https://doh.gov.ph/healthy-resources/doctors-to-the-barrios-dttb/" target="_blank" rel="noopener">doh.gov.ph/healthy-resources/doctors-to-the-barrios-dttb</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib7"><span class="num">07</span><span>Department of Education, Philippines. "Technology and Livelihood Education (TLE) and Technical-Vocational-Livelihood (TVL) Track." <a class="src-link" href="https://www.deped.gov.ph/k-to-12/about/k-to-12-basic-education-curriculum/technology-and-livelihood-education-tle-and-technical-vocational-livelihood-tvl-track/" target="_blank" rel="noopener">deped.gov.ph</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib8"><span class="num">08</span><span>Philippine Fiber Industry Development Authority. <em>The Philippine Abaca Industry Roadmap, 2021–2025</em>. <a class="src-link" href="https://philfida.da.gov.ph/images/the-philippine-abaca-industry-roadmap/the-philippine-abaca-industy-roadmap-2021-2025.pdf" target="_blank" rel="noopener">philfida.da.gov.ph (PDF)</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib9"><span class="num">09</span><span>Craig, Austin. <em>Lineage, Life and Labors of José Rizal</em>. Manila: Philippine Education Co., 1913. <a class="src-link" href="https://www.gutenberg.org/ebooks/6867" target="_blank" rel="noopener">Full text, Project Gutenberg</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib10"><span class="num">10</span><span>"Rizal's Exile in Dapitan." Class magazine feature, Issuu. <a class="src-link" href="https://issuu.com/gideonvaldez/docs/group6_magazine/s/18274993" target="_blank" rel="noopener">issuu.com</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib11"><span class="num">11</span><span>Department of Science and Technology. "Rizal, Innovating Essential Public Services for Public Good." 7 Feb. 2022. <a class="src-link" href="https://www.dost.gov.ph/knowledge-resources/news/74-2022-news/2652-rizal-innovating-essential-public-services-for-public-good.html" target="_blank" rel="noopener">dost.gov.ph</a><span class="src-tag web">Web</span></span></div>
-      <div class="entry" id="bib12"><span class="num">12</span><span>Ponferrada, Rodel B. "Reading José Rizal's Waterworks in Dapitan as Alternative Technology to Water Crisis Mitigation." <em>International Journal of Multidisciplinary Research and Publications</em> 6, no. 9 (2024): 85–91. <a class="src-link" href="https://ijmrap.com/wp-content/uploads/2024/03/IJMRAP-V6N9P73Y24.pdf" target="_blank" rel="noopener">ijmrap.com (PDF)</a><span class="src-tag web">Web</span></span></div>
+<!-- ============ BIBLIOGRAPHY ============ -->
+<section id="biblio" class="bg-parchment2/40 py-16 md:py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+    <span class="eyebrow uppercase text-[0.72rem] text-forest">References</span>
+    <h2 class="font-display font-semibold text-[clamp(1.5rem,2.6vw,1.9rem)] mt-2 text-charcoal">Bibliography</h2>
+    <div class="mt-9 grid gap-4">
+      <div id="bib1" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">01</span><span><em>Britannica</em>. "Jose Rizal: Biography, Education, Works, Full Name, &amp; Facts." <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://www.britannica.com/biography/Jose-Rizal" target="_blank" rel="noopener">britannica.com/biography/Jose-Rizal</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib2" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">02</span><span>National Historical Commission of the Philippines. "Rizal as a Farmer: The Dapitan Experience." <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://nhcp.gov.ph/rizal-as-a-farmer-the-dapitan-experience/" target="_blank" rel="noopener">nhcp.gov.ph/rizal-as-a-farmer-the-dapitan-experience</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib3" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">03</span><span>"Water System for Dapitan: Rizal Held the Title of Expert Surveyor." Study notes, Studocu. <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://www.studocu.com/ph/document/university-of-perpetual-help-system-jonelta/medical-technology/water-system-for-dapitan-she/58771910" target="_blank" rel="noopener">studocu.com</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib4" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">04</span><span>National Historical Commission of the Philippines. "Museo ni José Rizal, Dapitan." <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://nhcp.gov.ph/meseums/mjrd/" target="_blank" rel="noopener">nhcp.gov.ph/meseums/mjrd</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib5" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">05</span><span>Republic of the Philippines. "Proclamation No. 279, s. 2000 — Declaring Rizal National Park as the José Rizal Memorial Protected Landscape." <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://www.officialgazette.gov.ph/2000/04/23/proclamation-no-279-s-2000/" target="_blank" rel="noopener">officialgazette.gov.ph</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib6" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">06</span><span>Department of Health, Philippines. "Doctors to the Barrios (DTTB)." <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://doh.gov.ph/healthy-resources/doctors-to-the-barrios-dttb/" target="_blank" rel="noopener">doh.gov.ph/healthy-resources/doctors-to-the-barrios-dttb</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib7" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">07</span><span>Department of Education, Philippines. "Technology and Livelihood Education (TLE) and Technical-Vocational-Livelihood (TVL) Track." <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://www.deped.gov.ph/k-to-12/about/k-to-12-basic-education-curriculum/technology-and-livelihood-education-tle-and-technical-vocational-livelihood-tvl-track/" target="_blank" rel="noopener">deped.gov.ph</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib8" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">08</span><span>Philippine Fiber Industry Development Authority. <em>The Philippine Abaca Industry Roadmap, 2021–2025</em>. <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://philfida.da.gov.ph/images/the-philippine-abaca-industry-roadmap/the-philippine-abaca-industy-roadmap-2021-2025.pdf" target="_blank" rel="noopener">philfida.da.gov.ph (PDF)</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib9" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">09</span><span>Craig, Austin. <em>Lineage, Life and Labors of José Rizal</em>. Manila: Philippine Education Co., 1913. <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://www.gutenberg.org/ebooks/6867" target="_blank" rel="noopener">Full text, Project Gutenberg</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib10" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">10</span><span>"Rizal's Exile in Dapitan." Class magazine feature, Issuu. <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://issuu.com/gideonvaldez/docs/group6_magazine/s/18274993" target="_blank" rel="noopener">issuu.com</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib11" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem] pb-4 border-b border-dashed border-ink/20"><span class="eyebrow text-forest text-[0.85rem]">11</span><span>Department of Science and Technology. "Rizal, Innovating Essential Public Services for Public Good." 7 Feb. 2022. <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://www.dost.gov.ph/knowledge-resources/news/74-2022-news/2652-rizal-innovating-essential-public-services-for-public-good.html" target="_blank" rel="noopener">dost.gov.ph</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
+      <div id="bib12" class="biblio-entry grid grid-cols-[34px_1fr] gap-3.5 text-[0.9rem]"><span class="eyebrow text-forest text-[0.85rem]">12</span><span>Ponferrada, Rodel B. "Reading José Rizal's Waterworks in Dapitan as Alternative Technology to Water Crisis Mitigation." <em>International Journal of Multidisciplinary Research and Publications</em> 6, no. 9 (2024): 85–91. <a class="text-crimson-deep underline decoration-crimson-deep/35 hover:decoration-crimson-deep underline-offset-2" href="https://ijmrap.com/wp-content/uploads/2024/03/IJMRAP-V6N9P73Y24.pdf" target="_blank" rel="noopener">ijmrap.com (PDF)</a><span class="eyebrow text-[0.6rem] uppercase bg-forest/15 text-forest-deep rounded px-1.5 py-0.5 ml-1.5">Web</span></span></div>
     </div>
   </div>
 </section>
 
-<footer>
+<footer class="py-11 px-6 text-center eyebrow text-[0.66rem] text-ink/55 border-t border-ink/15">
   IMAGES SOURCED FROM WIKIMEDIA COMMONS, PUBLIC DOMAIN OR CC-LICENSED · CURATORIAL TEXT ORIGINAL
 </footer>
 
 <script>
-  // Scroll-reveal for cards and the curators' note
-  document.querySelectorAll('.card, .curators .box').forEach(el => el.classList.add('reveal'));
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // scroll reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => io.observe(el));
 
-  // Flash-highlight a bibliography entry when a citation link is clicked
+  // citation flash-highlight
   document.querySelectorAll('sup.cite a[data-jump]').forEach(link => {
     link.addEventListener('click', () => {
       const id = link.getAttribute('href').slice(1);
