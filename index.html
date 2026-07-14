@@ -93,6 +93,36 @@
   .tl-item{ transition:transform .4s ease; }
   .tl-item:hover{ transform:translateY(-4px); }
 
+  /* Custom styled horizontal scrollbar for the timeline */
+  #timeline .overflow-x-auto {
+    overflow-y: hidden; /* Prevent vertical scrolling entirely */
+    scrollbar-width: thin;
+    scrollbar-color: #a9814e #1f3226; /* Thumb (brass) | Track (forest deep) */
+  }
+
+  #timeline .overflow-x-auto::-webkit-scrollbar {
+    height: 8px; /* Slim height for horizontal bar */
+  }
+
+  #timeline .overflow-x-auto::-webkit-scrollbar-track {
+    background: #1f3226; /* Dark forest green track */
+    border-radius: 4px;
+  }
+
+  #timeline .overflow-x-auto::-webkit-scrollbar-thumb {
+    background-color: #a9814e; /* Matte brass thumb */
+    border-radius: 4px;
+    border: 2px solid #1f3226; /* Inset padding effect */
+  }
+
+  #timeline .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background-color: #c9a06a; /* Brighter brass on hover */
+  }
+
+  #timeline .overflow-x-auto::-webkit-scrollbar-vertical {
+    display: none; /* Hide any WebKit vertical scrollbars */
+  }
+
   /* citation */
   sup.cite a{ transition:background .25s ease, color .25s ease; }
   .biblio-entry{ scroll-margin-top:96px; transition:background .8s ease, border-color .8s ease; }
@@ -157,13 +187,11 @@
 </head>
 <body class="text-ink font-body leading-relaxed antialiased">
 
-<!-- paper grain -->
 <svg class="grain" xmlns="http://www.w3.org/2000/svg">
   <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter>
   <rect width="100%" height="100%" filter="url(#noise)"/>
 </svg>
 
-<!-- ============ HEADER ============ -->
 <header class="sticky top-0 z-50 bg-parchment/92 backdrop-blur border-b border-ink/15">
   <div class="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
     <a href="#top" class="font-display font-bold text-base md:text-lg tracking-tight">Talisay, <em class="italic text-forest not-italic font-display">1892–1896</em></a>
@@ -193,7 +221,6 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
 <section id="top" class="hero-field relative overflow-hidden border-b border-ink/15 py-24 md:py-32 px-6 text-center">
   <svg class="compass absolute -top-10 -right-10 w-56 h-56 opacity-[0.07] hidden md:block" viewBox="0 0 100 100" fill="none" stroke="#2a2117" stroke-width="0.5">
     <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="36"/>
@@ -222,7 +249,6 @@
   </div>
 </section>
 
-<!-- ============ ESSAY ============ -->
 <section id="essay" class="border-b border-ink/15 py-20 md:py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="max-w-xl mb-14 reveal">
@@ -244,7 +270,6 @@
   </div>
 </section>
 
-<!-- ============ TIMELINE ============ -->
 <section id="timeline" class="bg-forest-deep text-parchment border-b border-ink/15">
   <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
     <span class="eyebrow uppercase text-[0.72rem] text-brass-light">Four Years, Briefly</span>
@@ -306,7 +331,6 @@
   </div>
 </section>
 
-<!-- ============ THEN & NOW ============ -->
 <section id="correlations" class="border-b border-ink/15 py-20 md:py-24 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="max-w-2xl mb-14 reveal">
@@ -317,7 +341,6 @@
 
     <div class="flex flex-col gap-9">
 
-      <!-- CARD 1: WATER -->
       <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 01: INFRASTRUCTURE</span><h3 class="font-display text-2xl mt-1">A Water Line Built by Hand</h3></div>
@@ -345,7 +368,6 @@
         </div>
       </article>
 
-      <!-- CARD 2: HEALTH -->
       <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 02:  MEDICINE</span><h3 class="font-display text-2xl mt-1">A Clinic With No Waiting List Rule</h3></div>
@@ -372,7 +394,6 @@
         </div>
       </article>
 
-      <!-- CARD 3: EDUCATION -->
       <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 03:  EDUCATION</span><h3 class="font-display text-2xl mt-1">A School That Taught With Its Hands</h3></div>
@@ -399,7 +420,6 @@
         </div>
       </article>
 
-      <!-- CARD 4: AGRICULTURE -->
       <article class="card reveal bg-[#f5f0e2] border border-ink/15 rounded overflow-hidden">
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 04:  AGRICULTURE</span><h3 class="font-display text-2xl mt-1">Cutting Out the Middleman</h3></div>
@@ -430,7 +450,6 @@
   </div>
 </section>
 
-<!-- ============ REFLECTION ============ -->
 <section id="reflect" class="border-b border-ink/15 py-20 md:py-24 px-6">
   <div class="max-w-3xl mx-auto reveal">
     <span class="eyebrow uppercase text-[0.72rem] text-forest">Closing Reflection</span>
@@ -441,7 +460,6 @@
   </div>
 </section>
 
-<!-- ============ CURATORS' NOTE ============ -->
 <section id="curators" class="bg-parchment2/60 border-b border-ink/15 py-16 md:py-20 px-6">
   <div class="max-w-3xl mx-auto">
     <div class="mb-7 reveal">
@@ -470,7 +488,6 @@
   </div>
 </section>
 
-<!-- ============ BIBLIOGRAPHY ============ -->
 <section id="biblio" class="bg-parchment2/40 py-16 md:py-20 px-6">
   <div class="max-w-3xl mx-auto">
     <span class="eyebrow uppercase text-[0.72rem] text-forest">References</span>
@@ -493,7 +510,6 @@
   </div>
 </section>
 
-<!-- ============ IMAGE MODAL / LIGHTBOX ============ -->
 <div id="imgModal" onclick="if(event.target===this) closeImgModal()">
   <div class="modal-panel">
     <div class="modal-close" onclick="closeImgModal()">&times;</div>
