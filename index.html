@@ -118,6 +118,39 @@
   .split-then{ border-right:1px dashed rgba(42,33,23,0.18); }
   @media (max-width:767px){ .split-then{ border-right:none; border-bottom:1px dashed rgba(42,33,23,0.18); } }
 
+  /* image lightbox */
+  .lightbox-trigger{ cursor:zoom-in; position:relative; }
+  .lightbox-hint{
+    position:absolute; inset:auto 0 0 0; padding:8px 14px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.55), transparent);
+    color:#f1e7cd; font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.14em;
+    opacity:0; transition:opacity .35s ease; text-transform:uppercase; pointer-events:none;
+  }
+  .lightbox-trigger:hover .lightbox-hint{ opacity:1; }
+
+  #imgModal{
+    position:fixed; inset:0; z-index:100; display:none;
+    background:rgba(15,12,8,0.86); backdrop-filter:blur(3px);
+    align-items:center; justify-content:center; padding:24px;
+  }
+  #imgModal.open{ display:flex; }
+  .modal-panel{
+    position:relative; background:#f1e7cd; max-width:920px; width:100%; max-height:90vh; overflow-y:auto;
+    border-radius:6px; border:1px solid rgba(42,33,23,0.2);
+    box-shadow:0 40px 80px -20px rgba(0,0,0,0.6);
+    animation: modalIn .35s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes modalIn{ from{ opacity:0; transform:translateY(18px) scale(0.98); } to{ opacity:1; transform:translateY(0) scale(1); } }
+  .modal-img-wrap{ background:#19140f; max-height:56vh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .modal-img-wrap img{ width:100%; height:100%; object-fit:contain; max-height:56vh; }
+  .modal-close{
+    position:absolute; top:14px; right:14px; width:38px; height:38px; border-radius:999px;
+    background:rgba(241,231,205,0.92); color:#19140f; display:flex; align-items:center; justify-content:center;
+    font-size:1.1rem; line-height:1; cursor:pointer; transition:transform .2s ease, background .2s ease; z-index:2;
+  }
+  .modal-close:hover{ transform:scale(1.08); background:#fff; }
+  @media (prefers-reduced-motion: reduce){ .modal-panel{ animation:none; } }
+
   #mobileMenu{ max-height:0; overflow:hidden; transition:max-height .4s ease; }
   #mobileMenu.open{ max-height:340px; }
 </style>
@@ -289,8 +322,15 @@
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 01 — INFRASTRUCTURE</span><h3 class="font-display text-2xl mt-1">A Water Line Built by Hand</h3></div>
         </div>
-        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+        <div class="card-media lightbox-trigger h-56 md:h-64 overflow-hidden bg-charcoal"
+             onclick="openImgModal(this)"
+             data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Rizal%20Shrine%20Dapitan%20Casa%20Residencia%20(Talisay%2C%20Dapitan%2C%20Zamboanga%20Del%20Norte%3B%2010-16-2023).jpg"
+             data-alt="Rizal Shrine grounds at Talisay, Dapitan"
+             data-tag="PROJECT 01 — INFRASTRUCTURE"
+             data-title="A Water Line Built by Hand"
+             data-desc="This is a present-day photograph of the Rizal Shrine grounds at Talisay, Dapitan — the same site where Rizal surveyed the Linao spring and laid his bamboo aqueduct. No period photograph of the original waterworks survives, so this modern image marks the physical location where Project 01 actually stood.">
           <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rizal%20Shrine%20Dapitan%20Casa%20Residencia%20(Talisay%2C%20Dapitan%2C%20Zamboanga%20Del%20Norte%3B%2010-16-2023).jpg" alt="Rizal Shrine grounds at Talisay, Dapitan" loading="lazy">
+          <span class="lightbox-hint">Click to view full photo &amp; context</span>
         </div>
         <div class="grid md:grid-cols-2">
           <div class="split-then p-6 md:p-7">
@@ -309,8 +349,15 @@
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 02 — MEDICINE</span><h3 class="font-display text-2xl mt-1">A Clinic With No Waiting List Rule</h3></div>
         </div>
-        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+        <div class="card-media lightbox-trigger h-56 md:h-64 overflow-hidden bg-charcoal"
+             onclick="openImgModal(this)"
+             data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20nipa%20hut%20at%20Rizal%20Memorial%20Park%20and%20Shrine%20at%20Dapitan%2C%20Zamboanga%20del%20Norte.jpg"
+             data-alt="Interior of a nipa hut at the Rizal Shrine, Dapitan"
+             data-tag="PROJECT 02 — MEDICINE"
+             data-title="A Clinic With No Waiting List Rule"
+             data-desc="Interior of a nipa hut preserved at the Rizal Memorial Park and Shrine, Dapitan. It stands in for the small, home-based setting where Rizal actually practiced — his medical work was run out of his residence at Talisay, not a formal hospital, and a modest interior like this one is the closest visual match that survives.">
           <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20nipa%20hut%20at%20Rizal%20Memorial%20Park%20and%20Shrine%20at%20Dapitan%2C%20Zamboanga%20del%20Norte.jpg" alt="Interior of a nipa hut at the Rizal Shrine, Dapitan" loading="lazy">
+          <span class="lightbox-hint">Click to view full photo &amp; context</span>
         </div>
         <div class="grid md:grid-cols-2">
           <div class="split-then p-6 md:p-7">
@@ -329,8 +376,15 @@
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 03 — EDUCATION</span><h3 class="font-display text-2xl mt-1">A School That Taught With Its Hands</h3></div>
         </div>
-        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+        <div class="card-media lightbox-trigger h-56 md:h-64 overflow-hidden bg-charcoal"
+             onclick="openImgModal(this)"
+             data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Relief%20Map%20of%20Mindanao%20by%20Jose%20Rizal%20in%20Dapitan%20City.jpg"
+             data-alt="Relief Map of Mindanao built by Rizal and his students, Dapitan"
+             data-tag="PROJECT 03 — EDUCATION"
+             data-title="A School That Taught With Its Hands"
+             data-desc="The actual Relief Map of Mindanao, built in 1893 by Rizal and Fr. Francisco Sanchez with his students, out of earth, stone, and grass in the Dapitan plaza. Unlike most of the other images in this exhibit, this is a surviving original artifact from the period itself — it still stands today and has been declared a National Historical Landmark.">
           <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Relief%20Map%20of%20Mindanao%20by%20Jose%20Rizal%20in%20Dapitan%20City.jpg" alt="Relief Map of Mindanao built by Rizal and his students, Dapitan" loading="lazy">
+          <span class="lightbox-hint">Click to view full photo &amp; context</span>
         </div>
         <div class="grid md:grid-cols-2">
           <div class="split-then p-6 md:p-7">
@@ -349,8 +403,15 @@
         <div class="flex items-center justify-between px-6 md:px-7 py-5 border-b border-ink/15 bg-[#efe6cf]">
           <div><span class="eyebrow text-[0.68rem] text-brass">PROJECT 04 — AGRICULTURE</span><h3 class="font-display text-2xl mt-1">Cutting Out the Middleman</h3></div>
         </div>
-        <div class="card-media h-56 md:h-64 overflow-hidden bg-charcoal">
+        <div class="card-media lightbox-trigger h-56 md:h-64 overflow-hidden bg-charcoal"
+             onclick="openImgModal(this)"
+             data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20Shrine%2C%20Dapitan%2C%20Zamboanga%20del%20Norte.JPG"
+             data-alt="Grounds of the Rizal Shrine, formerly Rizal's farmland at Talisay"
+             data-tag="PROJECT 04 — AGRICULTURE"
+             data-title="Cutting Out the Middleman"
+             data-desc="A present-day view of the grounds of the Rizal Shrine — part of the roughly sixteen-hectare estate Rizal purchased and cleared at Talisay. This is the land where he experimented with abaca, cacao, coconut, and coffee, and drafted his plans for a farmers' cooperative.">
           <img class="w-full h-full object-cover grayscale-[30%] sepia-[6%] contrast-[1.02]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20Shrine%2C%20Dapitan%2C%20Zamboanga%20del%20Norte.JPG" alt="Grounds of the Rizal Shrine, formerly Rizal's farmland at Talisay" loading="lazy">
+          <span class="lightbox-hint">Click to view full photo &amp; context</span>
         </div>
         <div class="grid md:grid-cols-2">
           <div class="split-then p-6 md:p-7">
@@ -388,21 +449,21 @@
     </div>
     <div class="curators-box reveal relative bg-[#f5f0e2] border border-ink/15 rounded p-8 md:p-9">
       <h3 class="font-display text-lg mb-3">Why "Then &amp; Now" Instead of a Simple Timeline</h3>
-      <p class="text-[0.95rem] mb-4">Usual activities/outputs on Rizal's exile in Dapitan treat it like a simple part of his story especially in PI 10 classes; just a list of things he built between writing his novels and facing the firing squad.</p>
+      <p class="text-[0.95rem] mb-4">Most school projects on Rizal's exile in Dapitan treat it like a simple biography—just a list of things he built between writing his novels and facing the firing squad.</p>
       <p class="text-[0.95rem] mb-4">We wanted to try something different.</p>
       <p class="text-[0.95rem] mb-4">Instead of just looking backward, we treated each of Rizal's projects as a practical <strong>policy problem</strong>. We asked ourselves: <em>What modern-day Philippine government department or program is still trying to solve these exact same issues today?</em></p>
-      <p class="text-[0.95rem] mb-4">That is the core of this exhibit/website. We aren't introducing brand-new historical facts; instead, we are framing Rizal's life not just as history, but as an unfinished checklist of public works that we are still trying to build. We also felt that utilizing technology and by creating this simple "website" is a great way to appreciate and show his works and how it is still relevant in today's world.</p>
-      <h3 class="font-display text-lg mb-3 mt-5">Where We Got Our Resources</h3>
-      <p class="text-[0.95rem] mb-3">Because we are linking the past to the present, we focused on ensuring the accuracy of our information and utilized various sites as sources:</p>
+      <p class="text-[0.95rem] mb-4">That is the core of this exhibit. We aren't introducing brand-new historical facts; instead, we are framing Rizal's life not just as history, but as an unfinished checklist of public works that we are still trying to build.</p>
+      <h3 class="font-display text-lg mb-3 mt-5">How We Kept Our Facts Straight</h3>
+      <p class="text-[0.95rem] mb-3">Because we are linking the past to the present, we set a high bar for our research:</p>
       <ul class="list-disc pl-5 space-y-2 text-[0.95rem]">
         <li><strong>Publicly Verifiable:</strong> Every source we used is free and accessible online. If we made a claim, you can click the citation link to read the government page, journal PDF, or course material yourself.</li>
         <li><strong>Double-Checked History:</strong> We cross-referenced historical dates and facts against at least two independent sources. For example, we corrected a common drafting slip: Rizal's actual exile lasted exactly <strong>four years and two weeks</strong> (July 17, 1892 – July 31, 1896).</li>
         <li><strong>Direct Sources Only:</strong> For our "Today" comparisons, we pulled data straight from actual government programs (like the DOH or DepEd) rather than relying on secondary summaries or opinions.</li>
-        <li><strong>Fact vs. Interpretation:</strong> We gave our own little insights aswell like arguing that Rizal was "diagnosing" modern governance. We stated that it clearly in our analysis, not as undisputed historical fact.</li>
+        <li><strong>Fact vs. Interpretation:</strong> Where we offer our own take—like arguing that Rizal was "diagnosing" modern governance—we state it clearly as our analysis, not as undisputed historical fact.</li>
       </ul>
       <h3 class="font-display text-lg mb-3 mt-5">Connecting to Our Class (PI 10)</h3>
       <p class="text-[0.95rem] mb-4">This project is the culmination of our semester's discussions on Rizal as a <em>reformist</em> rather than just a revolutionary.</p>
-      <p class="text-[0.95rem]">We focused on the Dapitan years because it was the one time in Rizal's life where his practical, hands-on reformist instincts weren't just theories on a page. He actually went out of his way to build his ideas and theories in the soil of Mindanao.</p>
+      <p class="text-[0.95rem]">We focused on the Dapitan years because it was the one time in Rizal's life where his practical, hands-on reformist instincts weren't just theories on a page—they were built into the actual soil of Mindanao.</p>
       <div class="mt-6 pt-4 border-t border-dashed border-ink/20 eyebrow text-[0.68rem] text-ink/75">PREPARED BY: Crisostomo, Gomez &amp; Ilagan · PI 10, SECTION B3 · SUBMITTED JULY 14, 2026</div>
     </div>
   </div>
@@ -431,11 +492,44 @@
   </div>
 </section>
 
+<!-- ============ IMAGE MODAL / LIGHTBOX ============ -->
+<div id="imgModal" onclick="if(event.target===this) closeImgModal()">
+  <div class="modal-panel">
+    <div class="modal-close" onclick="closeImgModal()">&times;</div>
+    <div class="modal-img-wrap">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <div class="p-6 md:p-8">
+      <span id="modalTag" class="eyebrow text-[0.68rem] text-brass"></span>
+      <h3 id="modalTitle" class="font-display text-2xl mt-1 mb-3 text-charcoal"></h3>
+      <p id="modalDesc" class="text-[0.95rem] text-ink/90 mb-3"></p>
+      <p class="eyebrow text-[0.62rem] text-ink/50 uppercase">Source: Wikimedia Commons</p>
+    </div>
+  </div>
+</div>
+
 <footer class="py-11 px-6 text-center eyebrow text-[0.66rem] text-ink/55 border-t border-ink/15">
   IMAGES SOURCED FROM WIKIMEDIA COMMONS, PUBLIC DOMAIN OR CC-LICENSED · CURATORIAL TEXT ORIGINAL
 </footer>
 
 <script>
+  // image lightbox
+  function openImgModal(el){
+    const modal = document.getElementById('imgModal');
+    document.getElementById('modalImg').src = el.dataset.full;
+    document.getElementById('modalImg').alt = el.dataset.alt || '';
+    document.getElementById('modalTag').textContent = el.dataset.tag || '';
+    document.getElementById('modalTitle').textContent = el.dataset.title || '';
+    document.getElementById('modalDesc').textContent = el.dataset.desc || '';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeImgModal(){
+    document.getElementById('imgModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeImgModal(); });
+
   // mobile menu
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
